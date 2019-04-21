@@ -8,7 +8,7 @@ RUN curl -O http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3.tar.gz && \
     make && \
     make install && \
     cd .. && \
-    rm -r ruby-2.5.3.ruby-2.5.3.tar.gz
+    rm -r ruby-2.5.3 ruby-2.5.3.tar.gz
 
 RUN gem install bundler
 
