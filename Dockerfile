@@ -1,14 +1,14 @@
 FROM toyokappa/aws-deployer-docker
 
 # ruby install
-RUN curl -O http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3tar.gz && \
-    tar -zxvf ruby-2.5.3tar.gz && \
-    cd ruby-2.5.3&& \
+RUN curl -O http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3.tar.gz && \
+    tar -zxvf ruby-2.5.3.tar.gz && \
+    cd ruby-2.5.3 && \
     ./configure --disable-install-doc && \
     make && \
     make install && \
     cd .. && \
-    rm -r ruby-2.5.3ruby-2.5.3tar.gz
+    rm -r ruby-2.5.3.ruby-2.5.3.tar.gz
 
 RUN gem install bundler
 
