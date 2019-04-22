@@ -1,5 +1,7 @@
 FROM toyokappa/aws-deployer-docker
 
+ENV BUNDLER_VERSION=2.0.1
+
 # ruby install
 RUN curl -O http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3.tar.gz && \
     tar -zxvf ruby-2.5.3.tar.gz && \
@@ -10,6 +12,7 @@ RUN curl -O http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3.tar.gz && \
     cd .. && \
     rm -r ruby-2.5.3 ruby-2.5.3.tar.gz
 
+RUN gem update --system
 RUN gem install bundler
 
 RUN set -ex && \
