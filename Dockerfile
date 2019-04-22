@@ -13,6 +13,9 @@ RUN curl -O http://ftp.ruby-lang.org/pub/ruby/2.5/ruby-2.5.3.tar.gz && \
     rm -r ruby-2.5.3 ruby-2.5.3.tar.gz
 
 RUN gem update --system
+RUN gem uninstall bundler
+RUN rm /usr/local/bin/bundle
+RUN rm /usr/local/bin/bundler
 RUN gem install bundler
 
 RUN set -ex && \
